@@ -91,10 +91,19 @@
 //     );
 // }
 
+// fn main() {
+//     let a = [1, 2, 3, 4, 5];
+//     let first = a[0];
+//     let second = a[1];
+
+//     println!("first = {}. second = {}", first, second);
+// }
+
 fn main() {
     let a = [1, 2, 3, 4, 5];
-    let first = a[0];
-    let second = a[1];
+    let index = 10;
 
-    println!("first = {}. second = {}", first, second);
+    let el = a[index];
+
+    println!("el = {}", el);
 }
