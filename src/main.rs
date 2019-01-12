@@ -24,6 +24,8 @@
 // Scalar DataTypes: integer, floating pt number, Bool, char
 
 // Numeric Operations
+// ============================================================================
+
 // fn main() {
 //     // addition
 //     let sum = 5 + 10;
@@ -47,6 +49,8 @@
 // }
 
 // The Boolean type
+// ============================================================================
+
 // fn main() {
 //     let t = true;
 //     println!("t = {}", t);
@@ -68,6 +72,8 @@
 // }
 
 // Compound DataType: Tuple
+// ============================================================================
+
 // fn main() {
 //     // let tup: (i32, f64, u8) = (500, 6.4, 1);
 //     let tup = (500, 6.4, 1);
@@ -99,11 +105,53 @@
 //     println!("first = {}. second = {}", first, second);
 // }
 
+// Rust Compiler 'Panics' after checking array.length > actual array..
+// .. 'Panic' means to exit without an error. Rust protects us by
+// immediately exiting instead of allocating memory.
+
+// fn main() {
+//     let a = [1, 2, 3, 4, 5];
+//     let index = 10;
+
+//     let el = a[index];
+
+//     println!("el = {}", el);
+// }
+
+// Functions
+// ============================================================================
+
+// fn main() {
+//     println!("I'm about to call 'another_function'!");
+
+//     another_function();
+// }
+
+// fn another_function() {
+//     println!("'another_function' was called somewhere!");
+// }
+
+// Function Parameters
+// ============================================================================
+
+// fn main() {
+//     another_function(5);
+// }
+
+// // In function signatures, we 'must' declare the type of each parameter.
+// fn another_function(x: i32) {
+//     println!("The value of x is: {}", x);
+// }
+
 fn main() {
-    let a = [1, 2, 3, 4, 5];
-    let index = 10;
-
-    let el = a[index];
-
-    println!("el = {}", el);
+    another_function(5, 6);
 }
+
+fn another_function(x: i32, y: i32) {
+    println!("The value of x is: {}", x);
+    println!("The value of y is: {}", y);
+}
+
+// Statements and Expressions in Function Bodies
+// ============================================================================
+
