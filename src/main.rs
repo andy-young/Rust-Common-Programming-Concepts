@@ -143,15 +143,100 @@
 //     println!("The value of x is: {}", x);
 // }
 
-fn main() {
-    another_function(5, 6);
-}
+// fn main() {
+//     another_function(5, 6);
+// }
 
-fn another_function(x: i32, y: i32) {
-    println!("The value of x is: {}", x);
-    println!("The value of y is: {}", y);
-}
+// fn another_function(x: i32, y: i32) {
+//     println!("The value of x is: {}", x);
+//     println!("The value of y is: {}", y);
+// }
 
 // Statements and Expressions in Function Bodies
+// ============================================================================
+
+// 'Statements' are an instruction that perform an action..
+// .. and do not return a value.
+
+// 'Expressions' to a resulting value;
+
+// let y = 6 --> is a 'statement'.
+// Function definitions are also statement.
+
+// fn main() {
+//   let y = 6;
+// }
+
+
+// Will error, because can't assign a 'let' statement to variable.
+// fn main() {
+//   let x = (let y = 6);
+// }
+
+// error: expected expression, found statement (`let`)
+//    --> src/main.rs:173:12
+//     |
+// 173 |   let x = (let y = 6);
+//     |            ^^^ expected expression
+//     |
+//     = note: variable declaration using `let` is a statement
+
+// fn main() {
+//   let x = 5;
+
+//   let y = {
+//       let x = 3;
+//       x + 1   // semicolon here will change to statement vs expression
+//   };
+
+//   println!("The value of y is: {}", y);
+// }
+
+// Functions with Return Values
+// ============================================================================
+
+// fn five() -> i32 {
+//   5
+// }
+
+// fn main() {
+//   let x = five();
+
+//   println!("The value of x is: {}", x);
+// }
+
+// fn main() {
+//   let x = plus_one(5);
+
+//   println!("The value of x is: {}", x);
+// }
+
+// fn plus_one(x: i32) -> i32 {
+//   x + 1
+// }
+
+// fn main() {
+//   let x = plus_one(5);
+
+//   println!("The value of x is: {}", x);
+// }
+
+// fn plus_one(x: i32) -> i32 {
+//   x + 1; // error
+// }
+
+// error[E0308]: mismatched types
+//    --> src/main.rs:224:28
+//     |
+// 224 |   fn plus_one(x: i32) -> i32 {
+//     |  ____________________________^
+// 225 | |   x + 1; // error
+//     | |        - help: consider removing this semicolon
+// 226 | | }
+//     | |_^ expected i32, found ()
+//     |
+//     = note: expected type `i32`
+//                found type `()`
+
 // ============================================================================
 
